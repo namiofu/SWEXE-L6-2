@@ -1,0 +1,14 @@
+<%= form_for @cartitem, url: {action: :create} do |f| %>
+    <p>
+        商品名：<%= Product.find(@cartitem.product_id).name %>
+    </p>
+    <p>
+        価格：<%= Product.find(@cartitem.product_id).price %>円
+    </p>
+    <p>
+    <%= f.label :qty, '数量' %>
+    <%= f.text_area :qty %>
+    </p>
+    <%= f.hidden_field :product_id %>
+    <%= f.submit '商品を登録する' %>
+<%end%>

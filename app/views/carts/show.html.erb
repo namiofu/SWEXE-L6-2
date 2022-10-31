@@ -1,0 +1,10 @@
+<% @cartshows.each do |my| %>
+    <p>
+        商品名：<%= my.product.name %>
+        価格：<%= my.product.price %>円
+        数量<%= my.qty %>
+        <% @total =  @total + (my.qty * my.product.price) %>
+    </p>
+<%end%>
+<p>合計金額：<%= @total %></p>
+<p><%= link_to '商品一覧に戻る', products_path %></p>
